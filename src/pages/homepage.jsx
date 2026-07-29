@@ -7,12 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
+import Paper from "../components/homepage/paper";
 import Works from "../components/homepage/works";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
+import myPapers from "../data/papers";
 
 import "./styles/homepage.css";
 
@@ -126,19 +126,19 @@ const Homepage = () => {
 						<div className="homepage-after-title">
 							<div className="homepage-articles">
 								<div className="homepage-articles-heading">
-									Articles
+									Papers
 								</div>
-								{myArticles.map((article, index) => (
+								{myPapers.map((paper, index) => (
 									<div
 										className="homepage-article"
 										key={(index + 1).toString()}
 									>
-										<Article
+										<Paper
 											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
+											category={paper.category}
+											title={paper.title}
+											description={paper.description}
+											link={paper.link}
 										/>
 									</div>
 								))}
